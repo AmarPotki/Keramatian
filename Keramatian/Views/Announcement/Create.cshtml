@@ -1,0 +1,96 @@
+﻿@model Keramatian.Models.Announcement
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+    @using (Html.BeginForm("Create", "Announcement", null, FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>ایجاد</legend>
+
+
+            <div class="editor-label">
+                @Html.DisplayName("عنوان")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Title)
+                @Html.ValidationMessageFor(model => model.Title)
+            </div>
+              <div class="editor-label">
+                @Html.DisplayName("عنوان انگلیسی")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnTitle)
+                @Html.ValidationMessageFor(model => model.EnTitle)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("خلاصه خبر")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Summery)
+                @Html.ValidationMessageFor(model => model.Summery)
+            </div>
+             <div class="editor-label">
+                @Html.DisplayName("خلاصه خبر انگلیسی")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnSummery)
+                @Html.ValidationMessageFor(model => model.EnSummery)
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("اسم عکس")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.ImageName)
+                @Html.ValidationMessageFor(model => model.ImageName)
+            </div>
+            <div class="editor-label">
+                @Html.Label("بارگذاری عکس")
+            </div>
+            <div class="editor-field">
+                <input id="ImagePath" title="Upload a product image"
+                    type="file" name="file" />
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("متن خبر")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Description)
+                @Html.ValidationMessageFor(model => model.Description)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("متن خبر انگلیسی")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.EnDescription)
+                @Html.ValidationMessageFor(model => model.EnDescription)
+            </div>
+            <p>
+                <input type="submit" value="" class="BtnCreate" />
+            </p>
+        </fieldset>
+    }
+
+    <a href="/Announcement/Index">
+        <div class="BackBtn"></div>
+    </a>
+</div>
+@section Scripts {
+   <script type="text/javascript" src="/Scripts/tinymce/tinymce.min.js"></script>
+<script type="text/javascript">
+    tinymce.init({
+        selector: "textarea",
+        theme: "modern",
+        plugins: ["image"]
+    });
+</script>
+    @Scripts.Render("~/bundles/jqueryval")
+}

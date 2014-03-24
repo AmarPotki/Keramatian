@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="icon" href="/Images/favicon.ico" type="image/x-icon">
+        <meta charset="utf-8" />
+
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <title>@ViewBag.Title</title>
+                <script type='text/javascript' src='~/Scripts/js-Slide/jquery.min.js'></script>
+
+      <script type="text/javascript" language="javascript">
+          $(function () {
+              $(this).bind("contextmenu", function (e) {
+                  e.preventDefault();
+              });
+          });
+    </script>
+        <link href="~/Content/css-Slide/News.css" rel="stylesheet" />
+        <style type="text/css">
+            #NoDisplaySection, #flip {
+                margin: 0px auto;
+                width: 990px !important;
+            }
+            #NoDisplaySection {
+                display: none;
+                margin-top: 111px !important;
+                margin: 0px auto;
+            }
+
+            #Close {
+                float: right;
+            }
+            #Close img {
+                cursor: pointer;
+            }
+        </style>
+
+
+    </head>
+<body>
+
+
+    <div class="MyWidth">
+        <header>
+            <div class="TopPage">
+                <div class="Logo"></div>
+                <div class="MenuBar">
+                    <div class="nav-wrap">
+                        <ul class="group" id="example-one">
+                            <li class="current_page_item"> <a href="/">صفحه اصلی</a> </li>
+                            <li class="current_page_Gallery"><a href="/Carpet/gallery">گالری فرش</a></li>
+                            <li class="current_page_Leather"><a href="/LeatherCarpet/gallery">گالری پوست فرش</a></li>
+                            <li class="current_page_Namayande"><a href="/Home/Contact">نمایندگان فروش</a></li>
+                            <li class="current_page_AboutUS"><a href="/Home/About">درباره ما</a></li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="LeftBox">
+                       <a href="/Home/GetPdf">
+                        <div class="CatalogeDL"></div>
+                    </a>
+                    <div class="TopSocialPart">
+                    <div class="SearchBox"></div>
+                        <div class="SocialIcon">
+                            <a href="/EN/home"> <div class="EN"></div></a>
+                        
+                            @*<a> <div class="Facebook"></div></a>
+                            <a><div class="Twiteer"></div></a>*@ 
+                        </div>
+                        </div>
+                    <div class="Clear"></div>
+                </div>
+            </div>
+        </header>
+        <div id="body">
+            @RenderSection("featured", required: false)
+
+            @RenderBody()
+
+        </div>
+
+        <div class="Clear"></div>
+         <div class="Footer">
+            <div class="FooterL">© 2013 Keramatian.com | All rights reserved <br/>Powered By H&A</div>
+        </div> 
+    </div>
+   @* @Scripts.Render("~/bundles/jquery")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

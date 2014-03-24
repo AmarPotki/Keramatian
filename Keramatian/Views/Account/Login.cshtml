@@ -1,0 +1,59 @@
+﻿@model Keramatian.Models.LoginModel
+
+@{
+    ViewBag.Title = "ورود اعضا";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+<section id="loginForm">
+
+@using (Html.BeginForm(new { ReturnUrl = ViewBag.ReturnUrl })) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ورود کاربر</legend>
+           <div class="editor-label">
+           @Html.DisplayName("نام کاربری ")
+        </div>
+        <div class="editor-label">
+
+     
+            @Html.TextBoxFor(m => m.UserName)
+            @Html.ValidationMessageFor(m => m.UserName)
+        </div>
+                   <div class="editor-label">
+           @Html.DisplayName("رمز عبور ")
+        </div>
+        <div class="editor-label">
+            @Html.PasswordFor(m => m.Password)
+            @Html.ValidationMessageFor(m => m.Password)
+        </div>
+     @*              <div class="editor-label">
+           @Html.DisplayName("نام کاربری ")
+        </div>
+      <div class="editor-label">
+
+                @Html.CheckBoxFor(m => m.RememberMe)
+          
+       </div>*@
+
+        <input type="submit" value="" class="BtnLogin" />
+    </fieldset>@*
+    <p>
+        @Html.ActionLink("Register", "Register") if you don't have an account.
+    </p>*@
+}
+</section>
+
+@*<section class="social" id="socialLoginForm">
+    <h2>Use another service to log in.</h2>
+    @Html.Action("ExternalLoginsList", new { ReturnUrl = ViewBag.ReturnUrl })
+</section>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}*@
+    </div>

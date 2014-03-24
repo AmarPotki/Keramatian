@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Keramatian.Models.Carpet>
+
+@{
+    ViewBag.Title = "گالری عکس";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="PanelDesign">
+
+    @*@Html.ActionLink("", "Create","Carpet",new {@class="BtnCreate"})*@
+    <a href="/Carpet/Create">
+        <div class="BtnCreate"></div>
+    </a>
+   
+    <table class="TableDesign">
+    <tr>
+        <th>
+            @Html.DisplayName("کد")
+        </th>
+        <th>
+            @Html.DisplayName("طرح")
+        </th>
+        <th>
+            @Html.DisplayName("بارکد")
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Code)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Design)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BarCode)
+        </td>
+        <td>
+            @Html.ActionLink("ویرایش", "Edit", new { id=item.Id }) |
+            @Html.ActionLink("مشاهده جزئیات", "Details", new { id=item.Id }) |
+            @Html.ActionLink("حذف", "Delete", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
+    
+    </div>

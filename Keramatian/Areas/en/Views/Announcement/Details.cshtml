@@ -1,0 +1,23 @@
+﻿@model Keramatian.Models.Announcement
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/en/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="NewsPage">
+    <div>
+        <span class="NewsIMG">
+            <img  src="@Model.ImagePath" width="255" >
+        </span>
+        <p>
+            <b>@Html.DisplayFor(model => model.EnTitle)
+            </b>
+            <br />
+            <br />
+            @Html.Raw(HttpUtility.HtmlDecode(Model.EnDescription))
+           
+
+        </p>
+    </div>
+</div>

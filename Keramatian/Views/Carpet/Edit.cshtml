@@ -1,0 +1,89 @@
+﻿@using System.Collections
+@model Keramatian.ViewModel.CarpetDto
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+    @using (Html.BeginForm())
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>ویرایش</legend>
+
+            @Html.HiddenFor(model => model.Carpet.Id)
+
+            <div class="editor-label">
+                @Html.DisplayName("کد")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Carpet.Code)
+                @Html.ValidationMessageFor(model => model.Carpet.Code)
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("طرح")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Carpet.Design)
+                @Html.ValidationMessageFor(model => model.Carpet.Design)
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("بارکد")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Carpet.BarCode)
+                @Html.ValidationMessageFor(model => model.Carpet.BarCode)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("اولیت")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Carpet.Priority)
+                @Html.ValidationMessageFor(model => model.Carpet.Priority)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("درجه")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Grades")
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("زمینه")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("BackgroundColors")
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("حاشیه")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Plains")
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("ابعاد")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(x => x.Sizes)
+            </div>
+            <p>
+                <input type="submit" value="" class="BtnSave" />
+            </p>
+        </fieldset>
+    }
+
+    <a href="/Carpet/Index">
+        <div class="BackBtn"></div>
+    </a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,134 @@
+﻿@using Keramatian.Models
+@model IEnumerable<Keramatian.Models.Banner>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Areas/en/Views/Shared/_Layout.cshtml";
+}
+
+
+   <style type="text/css">
+
+        .current_page_item a{
+            color: #00ADEF !important;
+        }
+    </style>
+<section>
+
+
+    <div class="SliderSection">
+        <div id="NoDisplaySection">
+            <div id="Close">
+                <img src="/Images/Close.png" /></div>
+            <img src="@(((TopBanner)ViewBag.TopBanner).EnImagePath)"  style="margin: 25px 25px 15px 25px;"/>
+            
+
+        </div> 
+
+        <div class="pix_diapo">
+
+            @foreach (var item in Model)
+            {
+                <div>
+                    <img src="@item.EnImagePath" alt="@item.ImageName"/>
+                </div>
+            }
+
+         
+
+        </div>
+        <!-- #pix_diapo -->
+
+    </div>
+    <div id="wrap">
+
+		<div id="list">
+			<div class="prev"></div>
+					
+				<div class="slider">
+                    <ul>
+                        @foreach (var item in (IEnumerable<Announcement>)ViewBag.Announcements)
+                        {
+                            <li>
+                                           <a href="/en/Announcement/Details/@item.Id" title="@item.Title"><img src="@item.ImagePath" alt="@item.Title" class="captify" /></a>
+                            </li> 
+                        }
+         
+                    </ul>
+				</div>
+			<div class="next"></div>
+		</div>
+	</div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+        <!-- اسکریپ ها واسایل در صفحه ایندکس قرار گیرد-->
+        <link rel='stylesheet' id='style-css' href='~/Content/css-Slide/diapoEN.css' type='text/css' media='all'>
+
+        @*<script type='text/javascript' src='~/Scripts/js-Slide/jquery.min.js'></script>*@
+
+     
+        <script type='text/javascript' src='~/Scripts/js-Slide/jquery.easing.1.3.js'></script>
+        <script type='text/javascript' src='~/Scripts/js-Slide/jquery.hoverIntent.minified.js'></script>
+        <script type='text/javascript' src='~/Scripts/js-Slide/diapo.js'></script>
+        <script>
+            window.setTimeout(function () {
+                $("#NoDisplaySection").slideDown("slow");
+            }, 2000);
+
+            $(document).ready(function () {
+                $("#Close").click(function () {
+                    $("#NoDisplaySection").slideUp("slow");
+                });
+            });
+        </script>
+        <script type="text/javascript">
+
+
+            $(function () {
+                $('.pix_diapo').diapo();
+            });
+
+
+
+
+        </script>
+        <script type="text/javascript">
+            $(function () {
+                $(".slider").jCarouselLite({
+                    btnNext: ".next",
+                    btnPrev: ".prev",
+                    visible: 3
+                });
+            });
+
+            $(document).ready(function () {
+                $('img.captify').captify({
+                    // all of these options are... optional
+                    // ---
+                    // speed of the mouseover effect
+                    speedOver: 'fast',
+                    // speed of the mouseout effect
+                    speedOut: 'normal',
+                    // how long to delay the hiding of the caption after mouseout (ms)
+                    hideDelay: 500,
+                    // 'fade', 'slide', 'always-on'
+                    animation: 'slide',
+                    // text/html to be placed at the beginning of every caption
+                    prefix: '',
+                    // opacity of the caption on mouse over
+                    opacity: '0.7',
+                    // the name of the CSS class to apply to the caption box
+                    className: 'caption-bottom',
+                    // position of the caption (top or bottom)
+                    position: 'bottom',
+                    // caption span % of the image
+                    spanWidth: '100%'
+                });
+            });
+
+        </script>
+        <!-- تا اینجا -->
+        <script src="~/Scripts/js-News/jcarousellite_1.0.1.pack.js"></script>
+        <script src="~/Scripts/js-News/captify.tiny.js"></script>
+    }
+</section>
+

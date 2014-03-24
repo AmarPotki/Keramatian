@@ -1,0 +1,12 @@
+Error in Path : /LeatherCarpet/Create
+Raw Url : /LeatherCarpet/Create
+Message : Object reference not set to an instance of an object.
+Source : Keramatian
+Stack Trace :    at Keramatian.Controllers.LeatherCarpetController.Create(LeatherCarpetDto leatherCarpetDto, FormCollection formCollection, HttpPostedFileBase imageFiles, HttpPostedFileBase highFiles) in d:\Projects\Keramatian\Keramatian\Controllers\LeatherCarpetController.cs:line 85
+TargetSite : System.Web.Mvc.ActionResult Create(Keramatian.ViewModel.LeatherCarpetDto, System.Web.Mvc.FormCollection, System.Web.HttpPostedFileBase, System.Web.HttpPostedFileBase)
+Error in Path : /LeatherCarpet/Create
+Raw Url : /LeatherCarpet/Create
+Message : Object reference not set to an instance of an object.
+Source : Keramatian
+Stack Trace :    at Keramatian.Controllers.LeatherCarpetController.Create(LeatherCarpetDto leatherCarpetDto, FormCollection formCollection, HttpPostedFileBase imageFiles, HttpPostedFileBase highFiles) in d:\Projects\Keramatian\Keramatian\Controllers\LeatherCarpetController.cs:line 85
+TargetSite : System.Web.Mvc.ActionResult Create(Keramatian.ViewModel.LeatherCarpetDto, System.Web.Mvc.FormCollection, System.Web.HttpPostedFileBase, System.Web.HttpPostedFileBase)

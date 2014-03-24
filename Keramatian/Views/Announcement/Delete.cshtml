@@ -1,0 +1,37 @@
+﻿@model Keramatian.Models.Announcement
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+<h3>
+آیا از حذف مطمئن هستید؟</h3>
+
+<table class="TableDesign">
+    <tr>
+        <th>@Html.DisplayNameFor(model => model.Title)</th>
+        <th>@Html.DisplayNameFor(model => model.Summery)</th>
+        <th>@Html.DisplayNameFor(model => model.ImageName)</th>
+        <th> @Html.DisplayNameFor(model => model.ImagePath)</th>
+        <th>@Html.DisplayNameFor(model => model.Description)</th>
+    </tr>
+    
+    <tr>
+        <td>@Html.DisplayFor(model => model.Title)</td>
+        <td>@Html.DisplayFor(model => model.Summery)</td>
+        <td> @Html.DisplayFor(model => model.ImageName)</td>
+        <td>@Html.DisplayFor(model => model.ImagePath)</td>
+        <td>@Html.DisplayFor(model => model.Description)</td>
+    </tr>
+</table>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="" class="BtnDelet" /> 
+        <br/>
+        @Html.ActionLink("بازگشت", "Index")
+    </p>
+}
+    </div>

@@ -1,0 +1,81 @@
+﻿@using PagedList
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "LeatherCarpet";
+    Layout = "~/Areas/en/Views/Shared/_Layout.cshtml";
+}
+
+@section Scripts {
+
+    <link href="~/Content/PagedList.css" rel="stylesheet" />
+    <script src="/Scripts/js-Gallery/jquery-1.10.1.min.js"></script>
+    <script src="/Scripts/js-Gallery/jquery.fancybox.js"></script>
+    <link href="/Content/css-Slide/Gallery.css" rel="stylesheet" />
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $('.fancybox').fancybox();
+
+
+
+        });
+    </script>
+    <style type="text/css">
+        .fancybox-custom .fancybox-skin {
+            box-shadow: 0 0 50px #222;
+        }
+        .current_page_Leather a{
+            color: #00ADEF !important;
+        }
+        .current_page_item a{
+            color: #ffffff !important;
+        }
+    </style>
+}
+
+<div class="GalleryPage">
+    <div class="Clear"></div>
+    <div class="RowGallery">
+        @foreach (var item in ViewBag.OnePageOfcarpets1)
+        {
+            <div class="GalleryIMG">
+                <span class="GalleryInfo">
+                    <p class="GalleryTitle">@item.Design</p>
+                    <p class="GalleryCode">@item.Code</p>
+                </span>
+                <div class="Clear"></div>
+                <a class="fancybox" href="@item.HighQualityImagePath" data-fancybox-group="gallery">
+                    <img src="@item.ImagePath" width="320" height="468" />
+                </a>
+
+            </div>
+
+        }
+    </div>
+    <div class="Clear"></div>
+    @if (ViewBag.OnePageOfcarpets2 != null)
+    {
+        <div class="RowGallery">
+            @foreach (var item in ViewBag.OnePageOfcarpets2)
+            {
+                <div class="GalleryIMG">
+                    <span class="GalleryInfo">
+                        <p class="GalleryTitle">@item.Design</p>
+                        <p class="GalleryCode">@item.Code</p>
+                    </span>
+                    <div class="Clear"></div>
+                    <a class="fancybox" href="@item.HighQualityImagePath" data-fancybox-group="gallery">
+                        <img src="@item.ImagePath" width="320" height="468" />
+                    </a>
+
+                </div>
+
+            }
+        </div>
+    }
+</div>
+
+
+@Html.PagedListPager((IPagedList)ViewBag.OnePageOfcarpets, page => Url.Action("Gallery", new { page }))
+
+

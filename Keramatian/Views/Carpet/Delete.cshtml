@@ -1,0 +1,36 @@
+﻿@model Keramatian.Models.Carpet
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+<h3>
+آیا از حذف مطمئن هستید؟</h3>
+
+<table class="TableDesign">
+    <tr>
+        <th>@Html.DisplayName("کد")</th>
+        <th> @Html.DisplayName("طرح")</th>
+        <th>@Html.DisplayName("بارکد")</th>
+    </tr>
+      <tr>
+          <td> @Html.DisplayFor(model => model.Code)   </td>
+          <td> @Html.DisplayFor(model => model.Design)</td>
+          <td> @Html.DisplayFor(model => model.BarCode) </td>
+    </tr>
+   
+</table>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="" class="BtnDelet" />
+        <br/>
+        
+    </p>
+}
+     <a href="/Carpet/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

@@ -1,0 +1,21 @@
+﻿@model Keramatian.Models.Grade
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+    <table class="TableDesign">
+      <tr><th> @Html.DisplayName("نام ")</th></tr>
+        <tr><td>@Html.DisplayFor(model => model.Name)</td></tr>
+  
+        </table>
+     <a href="/Grade/Edit/@Model.Id">
+        <div class="EditeBTN"></div>
+    </a>
+     <a href="/Grade/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

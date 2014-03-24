@@ -1,0 +1,620 @@
+﻿
+html {
+    margin: 0;
+    padding: 0;
+}
+/*@font-face {
+    font-family: "honey";
+    src: url("../../Content/MYRIADARABIC-REGULAR.OTF");
+}*/
+body {
+    background-image: url("../../Images/page-gradient-bg.jpg");
+    color: #333333;
+   /* font-family: "Segoe UI",Verdana,Helvetica,Sans-Serif;*/
+font-family:tahoma;
+    font-size: 0.85em;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+}
+a {
+    color: #333333;
+    outline: medium none;
+    padding-left: 3px;
+    padding-right: 3px;
+    text-decoration: underline;
+}
+a:link, a:visited, a:active, a:hover {
+    color: #333333;
+}
+header, footer, hgroup, nav, section {
+    display: block;
+}
+.Clear {
+    clear: both;
+}
+mark {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.float-left {
+    float: left;
+}
+.float-right {
+    float: right;
+}
+.clear-fix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #000000;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+h1 {
+    font-size: 2em;
+}
+h2 {
+    font-size: 1.75em;
+}
+h3 {
+    font-size: 1.2em;
+}
+h4 {
+    font-size: 1.1em;
+}
+h5, h6 {
+    font-size: 1em;
+}
+h5 a:link, h5 a:visited, h5 a:active {
+    padding: 0;
+    text-decoration: none;
+}
+header {
+    margin: 0 auto;
+    width: 990px;
+}
+label {
+    display: block;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+label.checkbox {
+    display: inline;
+}
+input, textarea {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #E2E2E2;
+    color: #333333;
+    font-size: 1.2em;
+    margin: 5px 0 6px;
+    padding: 5px;
+    width: 300px;
+}
+textarea {
+    font-family: inherit;
+    width: 500px;
+}
+.Logo {
+    background-image: url("../../Images/LogoEN.png");
+    background-repeat: no-repeat;
+    float: left;
+    height: 110px;
+    margin-top: 2px;
+    width: 171px;
+}
+.MenuBar {
+    direction: ltr;
+    float: left;
+    font-family: tahoma;
+    margin-top: 56px;
+    text-align: left;
+    width: 579px;
+}
+.TopPage {
+    background-image: url("../../Images/TopBG.jpg");
+    background-repeat: repeat-x;
+    height: 10px !important;
+    margin: 0 auto;
+    width: 990px;
+}
+.LeftBox {
+    float: left;
+    margin-top: 26px;
+    width: 239px !important;
+}
+.SearchBox {
+    background-image: url("../../Images/SearchBG.gif");
+    float: right;
+    height: 20px;
+    width: 145px;
+}
+a .Facebook {
+    background-image: url("/Images/Facebook.gif");
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    width: 26px;
+background-position: top;
+}
+a .FA {
+    background-image: url("/Images/FA.gif");
+    cursor: pointer;
+    float: right;
+    height: 20px;
+    width: 38px;
+background-position: top;
+    margin-right: 10px;
+}
+a .Twiteer {
+    background-image: url("/Images/tweeiter.gif");
+    cursor: pointer;
+    float: left;
+    height: 20px;
+    margin-left: 4px;
+    width: 26px;
+background-position: top;
+}
+.SocialIcon {
+    float: right;
+    height: 20px;
+    width: 78px;
+}
+a .Twiteer:hover {
+    background-image: url("/Images/tweeiter.gif");
+    height: 20px;
+    width: 26px;
+background-position: bottom;
+}
+a .Facebook:hover {
+    background-image: url("/Images/Facebook.gif");
+    float: left;
+    height: 20px;
+    width: 26px;
+background-position: bottom;
+}
+a .CatalogeDL {
+    background-image: url("../../Images/DlCatalogeEN.png");
+    background-position: center top;
+    cursor: pointer;
+    float: right;
+    height: 15px;
+    margin-left: 3px;
+    margin-top: 12px;
+    width: 139px;
+    background-repeat: no-repeat;
+}
+.SliderSection {
+    clear: both;
+    margin: 0 auto;
+ /*   padding-bottom: 35px;*/
+    width: 990px;
+    z-index: 0;
+}
+.TopSlider {
+    clear: both;
+    height: 204px;
+    margin: 22px auto;
+    top: 130px;
+    width: 990px;
+}
+.TopSlider img {
+    float: right;
+}
+.nav-wrap {
+    width: 543px;
+}
+#example-one {
+    list-style: none outside none;
+    margin: 0 auto;
+    position: relative;
+}
+#example-one li {
+    display: inline-block;
+}
+#example-one a {
+    color: #BBBBBB;
+    float: left;
+    font-size: 14px;
+    padding: 6px 10px 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+#example-one a:hover {
+    color: #00ADEF;
+}
+.current_page_item a {
+    color: #00ADEF;
+}
+.current_page_item a:hover {
+    color: #00ADEF !important;
+}
+.Footer {
+    background-color: #171717;
+    color: #848586;
+    font-family: tahoma;
+    height: 25px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+    padding: 15px 10px;
+}
+.MyWidth {
+    margin: 0 auto;
+    width: 990px;
+}
+.FooterR {
+    float: right;
+    text-align: right;
+    width: 500px;
+}
+.FooterL {
+    text-align: center;
+}
+.TopSocialPart {
+    height: 20px;
+    margin-top: 16px;
+    width: 234px;
+}
+table.TableDesign, table.tecspec {
+    border-collapse: collapse;
+    width: 100%;
+}
+table.TableDesign tr:nth-child(2n+1) {
+    background-color: #F6F4F0;
+}
+table.TableDesign tr:nth-child(2n) {
+    background-color: #FFFFFF;
+}
+table.TableDesign tr.fixzebra {
+    background-color: #F6F4F0;
+}
+table.TableDesign th {
+    background-color: #555555;
+    border: 1px solid #555555;
+    color: #FFFFFF;
+    font-size: 12px;
+    padding: 3px;
+    text-align: left;
+    vertical-align: top;
+}
+table.TableDesign th a:link, table.TableDesign th a:visited {
+    color: #FFFFFF;
+}
+table.TableDesign td {
+    border: 1px solid #D4D4D4;
+    padding: 7px 5px;
+    vertical-align: top;
+}
+.PanelDesign table tr th {
+    direction: rtl !important;
+    text-align: center;
+}
+.PanelDesign table tr td {
+    text-align: center;
+}
+.BtnUpload {
+    background-image: url("../../Images/BtnUpload.png");
+    clear: both;
+    cursor: pointer;
+    height: 31px;
+    margin-bottom: 10px;
+    width: 131px;
+}
+.BtnLogin{
+    background-image: url("../../Images/BtnLogin.png");
+    clear: both;
+    cursor: pointer;
+    height: 31px;
+    margin-bottom: 10px;
+    width: 131px;
+}
+.BtnDelet {
+    background-image: url("../../Images/BtnDelet.png");
+    border: 0 none;
+    cursor: pointer;
+    height: 32px;
+    width: 115px;
+}
+.BtnCreate {
+    background-image: url("../../Images/BtnCreate.png");
+    border: 0 none;
+    clear: both;
+    cursor: pointer;
+    height: 31px;
+    margin-bottom: 10px;
+    width: 115px;
+}
+.PanelDesign h3 {
+    color: #D4D4D4;
+    margin-bottom: 10px;
+}
+.PanelDesign {
+    direction: rtl;
+    text-align: right;
+}
+.PanelDesign a {
+    color: #D4D4D4;
+    text-decoration: none;
+}
+.PanelDesign fieldset {
+    background-color: #555555;
+    border: 1px solid #D4D4D4;
+}
+.PanelDesign fieldset legend {
+    color: #D4D4D4;
+    font-size: 16px;
+    font-weight: bold;
+}
+.BtnSave {
+    background-image: url("../../Images/BtnSave.png");
+    border: 0 none;
+    cursor: pointer;
+    height: 32px;
+    width: 115px;
+}
+.BackBtn {
+    background-image: url("../../Images/BackBTN.png");
+    cursor: pointer;
+    height: 48px;
+    width: 53px;
+}
+.EditeBTN {
+    background-image: url("../../Images/BtnEdite.png");
+    border: 0 none;
+    cursor: pointer;
+    height: 32px;
+    width: 115px;
+}
+.BtnRegister {
+    background-image: url("../../Images/BtnRegister.png");
+    border: 0 none;
+    cursor: pointer;
+    height: 32px;
+    width: 115px;
+}
+.TableDesign a {
+    color: #555555;
+}
+.editor-label {
+    font-weight: bold;
+    padding-bottom: 2px;
+    padding-top: 6px;
+}
+.NewsPage {
+    direction: rtl;
+    margin: 0 auto;
+    text-align: right !important;
+    width: 990px;
+}
+.NewsIMG {
+    background-image: url("../../Images/NewsBG.png");
+    background-repeat: no-repeat;
+    float: left !important;
+    height: 209px;
+    margin-bottom: 15px;
+    margin-right: 25px;
+    padding-right: 36px;
+    padding-top: 38px;
+    width: 288px;
+}
+.NewsPage b {
+    color: #00ADEF;
+}
+.NewsPage p {
+    color: #E2E2E2;
+    padding-left: 25px !important;
+    text-align: justify;
+}
+.NewsIMG img {
+    border-radius: 5px 5px 5px 5px;
+}
+.GalleryPage {
+    margin: 0 auto;
+    width: 990px;
+}
+.RowGallery {
+    float: right;
+    margin-right: 15px;
+    margin-top: 45px;
+    width: 990px;
+}
+.RowGallery img {
+    margin-left: 6px;
+}
+.GalleryIMG {
+    color: #FFFFFF;
+    width: 320px;
+}
+.GalleryTitle {
+    background-image: url("../../Images/IMG-Gallery/Arrow.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    float: left;
+    padding-bottom: 10px;
+    padding-left: 15px;
+}
+.GalleryCode {
+    float: right;
+    padding-right: 15px;
+    font-weight: bold;
+}
+.GalleryInfo {
+    height: 38px;
+    width: 320px;
+}
+.GalleryIMG {
+    float: right;
+    margin-left: 10px;
+}
+.GalleryBTN {
+    background-image: url("../../Images/Admin/Gallery.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 40px;
+    width: 268px;
+}
+.GalleryBTN:hover {
+    background-image: url("../../Images/Admin/Gallery-Hover.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 40px;
+    width: 268px;
+}
+.LeatherBTN {
+    background-image: url("../../Images/Admin/Leather.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.LeatherBTN:hover {
+    background-image: url("../../Images/Admin/Leather-Hover.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.NewsBTN {
+    background-image: url("../../Images/Admin/News.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.NewsBTN:hover {
+    background-image: url("../../Images/Admin/News-Hover.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.RoleBTN {
+    background-image: url("../../Images/Admin/Role.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    margin-top: 35px;
+    width: 268px;
+}
+.RoleBTN:hover {
+    background-image: url("../../Images/Admin/Role-Hover.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.CatalogBTN {
+    background-image: url("../../Images/Admin/Catalog.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    margin-top: 35px;
+    width: 268px;
+}
+.CatalogBTN:hover {
+    background-image: url("../../Images/Admin/Catalog-Hover.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.BannerBTN {
+    background-image: url("../../Images/Admin/Banner.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    margin-top: 35px;
+    width: 268px;
+}
+.BannerBTN:hover {
+    background-image: url("../../Images/Admin/Banner-Hover.png");
+    cursor: pointer;
+    float: right;
+    height: 73px;
+    margin-right: 45px;
+    width: 268px;
+}
+.SizeBTN {
+    background-image: url("../../Images/Admin/Size.png");
+    float: right;
+    height: 56px;
+    width: 205px;
+}
+.SizeBTN:hover {
+    background-image: url("../../Images/Admin/Size-Hover.png");
+    height: 56px;
+    width: 205px;
+}
+.GradeBTN {
+    background-image: url("../../Images/Admin/Grade.png");
+    float: right;
+    height: 56px;
+    width: 205px;
+    margin-left: 20px;
+    margin-right: 25px;
+}
+.GradeBTN:hover {
+    background-image: url("../../Images/Admin/Grade-Hover.png");
+    height: 56px;
+    width: 205px;
+}
+.BgBTN {
+    background-image: url("../../Images/Admin/BG.png");
+    float: right;
+    height: 56px;
+    width: 205px;
+}
+.BgBTN:hover {
+    background-image: url("../../Images/Admin/BG-Hover.png");
+    height: 56px;
+    width: 205px;
+}
+.BorderBTN {
+    background-image: url("../../Images/Admin/Hashie.png");
+    float: right;
+    height: 56px;
+    width: 205px;
+    margin-right: 25px;
+    margin-left: 20px;
+}
+.BorderBTN:hover {
+    background-image: url("../../Images/Admin/Hashie-Hover.png");
+    height: 56px;
+    width: 205px;
+}
+.prev img {
+    border: 0px !important;
+    width: 40px;
+    height: 40px;   
+}
+
+.AboutUS {
+    color: #FFFFFF;
+    direction: ltr;
+    line-height: 22px;
+    padding-bottom: 30px;
+    text-align: justify;
+    width: 990px;
+}
+.AboutUSPIC {
+    margin-left: 387px;
+}
+.AboutUS p {
+    text-align: left;
+    direction: ltr;
+}

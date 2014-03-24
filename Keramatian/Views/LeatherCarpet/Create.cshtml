@@ -1,0 +1,109 @@
+﻿@using System.Collections
+@model Keramatian.ViewModel.LeatherCarpetDto
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+    @using (Html.BeginForm("Create", "LeatherCarpet", null, FormMethod.Post,
+                              new { enctype = "multipart/form-data" }))
+    {
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>مشخصات فرش</legend>
+
+            <div class="editor-label">
+                @Html.DisplayName("کد")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LeatherCarpet.Code)
+                @Html.ValidationMessageFor(model => model.LeatherCarpet.Code)
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("طرح")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LeatherCarpet.Design)
+                @Html.ValidationMessageFor(model => model.LeatherCarpet.Design)
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("بارکد")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LeatherCarpet.BarCode)
+                @Html.ValidationMessageFor(model => model.LeatherCarpet.BarCode)
+            </div>
+               <div class="editor-label">
+                @Html.DisplayName("اولیت")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LeatherCarpet.Priority)
+                @Html.ValidationMessageFor(model => model.LeatherCarpet.Priority)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("درجه")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Grade")
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("زمینه")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("BackgroundColor")
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("حاشیه")
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("Plain")
+            </div>
+
+            <div class="editor-label">
+                @Html.DisplayName("ابعاد")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Sizes)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("نام عکس")
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LeatherCarpet.ImageName)
+                @Html.ValidationMessageFor(model => model.LeatherCarpet.ImageName)
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("عکس")
+            </div>
+            <div class="editor-field">
+                <input id="ImagePath" title="Upload a product image"
+                    type="file" name="imageFiles" />
+            </div>
+            <div class="editor-label">
+                @Html.DisplayName("عکس با کیفیت")
+            </div>
+            <div class="editor-field">
+                <input id="HighQualityImagePath" title="Upload a product image"
+                    type="file" name="highFiles" />
+            </div>
+            <p>
+                <input type="submit" value="" class="BtnCreate" />
+            </p>
+        </fieldset>
+    }
+    <br />
+    }  <a href="/LeatherCarpet/Index">
+        <div class="BackBtn"></div>
+    </a>
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,46 @@
+﻿@model Keramatian.Models.RegisterModel
+@{
+    ViewBag.Title = "Register";
+}
+
+<hgroup class="title">
+    <h1>@ViewBag.Title.</h1>
+   
+</hgroup>
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary()
+
+    <fieldset>
+        <legend>ایجاد کاربر جدید</legend>
+       
+        <div class="editor-label">
+            @Html.DisplayName("نام کاربری")
+        </div>
+           <div class="editor-field">
+                @Html.TextBoxFor(m => m.UserName)
+           </div>
+        <div class="editor-label">
+            @Html.DisplayName("رمز عبور")
+        </div>
+        <div class="editor-field">
+                @Html.PasswordFor(m => m.Password)
+            </div>
+           
+        <div class="editor-label">
+            @Html.DisplayName("تکرار رمز عبور")
+        </div>
+        <div class="editor-field">
+                @Html.PasswordFor(m => m.ConfirmPassword)
+          </div>
+      <br/>
+        <input type="submit" value="" class="BtnRegister" />
+    </fieldset>
+}
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,54 @@
+﻿@model Keramatian.Models.TopBanner
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+@using (Html.BeginForm("Create", "TopBanner", null, FormMethod.Post,
+                              new { enctype = "multipart/form-data" }))
+{
+    @Html.ValidationSummary(true)
+ <fieldset>
+        <legend> ایجاد عکس بنر ثابت   </legend>
+
+          <div class="editor-label">
+            @Html.Label("اسم عکس")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageName)
+            @Html.ValidationMessageFor(model => model.ImageName)
+        </div>
+
+        <div class="editor-label">
+            @Html.Label("بارگذاری عکس")
+        </div>
+        <div class="editor-field">
+            <input id="ImagePath" title="Upload a product image"
+                type="file" name="file" />
+        </div>
+
+        <div class="editor-label">
+                @Html.DisplayName("عکس سایت انگلیسی")
+            </div>
+            <div class="editor-field">
+                <input id="enFile" title="Upload a product image"
+                    type="file" name="enFile" />
+            </div>
+        <p>
+            <input type="submit" value="" class="BtnCreate" /></p>
+
+      
+    </fieldset>
+}
+    <br/>
+ <a href="/TopBanner/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

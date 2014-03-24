@@ -1,0 +1,28 @@
+﻿@model Keramatian.Models.Banner
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+    <table class="TableDesign">
+        <tr>
+            <th> @Html.Label("نام عکس")</th>
+            <th> @Html.Label("آدرس عکس")</th>
+        </tr>
+        <tr>
+            <td> @Html.DisplayFor(model => model.ImageName)</td>
+            <td> @Html.DisplayFor(model => model.ImagePath)</td>
+        </tr>
+    </table>
+   
+<a href="/Banner/Edit/@Model.Id">
+    <div class="EditeBTN"></div>
+</a>
+<br/>
+<a href="/Banner/Index">
+        <div class="BackBtn"></div>
+    </a>

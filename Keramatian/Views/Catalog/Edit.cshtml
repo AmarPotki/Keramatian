@@ -1,0 +1,49 @@
+﻿@model Keramatian.Models.Catalog
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ویرایش</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+           @Html.DisplayName("نام ")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.DisplayName("آدرس فایل")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FilePath)
+            @Html.ValidationMessageFor(model => model.FilePath)
+        </div>
+
+        <p>
+            <input type="submit" value="" class="BtnSave" />
+        </p>
+    </fieldset>
+}
+
+ <a href="/Catalog/Index">
+        <div class="BackBtn"></div>
+    </a>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+    
+    </div>

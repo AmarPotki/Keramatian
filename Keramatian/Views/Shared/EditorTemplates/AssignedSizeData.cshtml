@@ -1,0 +1,7 @@
+﻿@model Keramatian.ViewModel.AssignedSizeData
+
+<fieldset>
+    @Html.HiddenFor(model => model.SizeId)
+    @Html.CheckBoxFor(model => model.Assigned)
+    @Html.DisplayFor(model => model.SizeName)
+</fieldset>

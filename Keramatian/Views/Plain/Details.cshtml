@@ -1,0 +1,25 @@
+﻿@model Keramatian.Models.Plain
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+    <table class="TableDesign">
+      
+        <tr><th>@Html.DisplayNameFor(model => model.Name)</th></tr>
+        <tr><td>@Html.DisplayFor(model => model.Name)</td></tr>
+  
+</table>
+    <p>
+        @Html.ActionLink("ویرایش", "Edit", new { id=Model.Id }) 
+        <br/>
+
+    </p>
+     <a href="/Plain/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

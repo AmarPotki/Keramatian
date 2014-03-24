@@ -1,0 +1,36 @@
+﻿@model Keramatian.Models.Plain
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ایجاد رنگ حاشیه جدید</legend>
+
+        <div class="editor-label">
+            @Html.DisplayName("نام")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Name)
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <p>
+            <input type="submit" value="" class="BtnCreate" />
+        </p>
+    </fieldset>
+}
+    <br/>
+   <a href="/Plain/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

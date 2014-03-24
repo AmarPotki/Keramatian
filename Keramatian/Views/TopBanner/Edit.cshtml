@@ -1,0 +1,50 @@
+﻿@model Keramatian.Models.TopBanner
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+ 
+    <fieldset>
+        <legend>ویرایش </legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+       <div class="editor-label">
+           @Html.DisplayName("اسم عکس")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImageName)
+            @Html.ValidationMessageFor(model => model.ImageName)
+        </div>
+
+       <div class="editor-label">
+           @Html.DisplayName("آدرس عکس")
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ImagePath)
+            @Html.ValidationMessageFor(model => model.ImagePath)
+        </div>
+    <p>
+            <input type="submit" value="" class="BtnSave" />
+        </p>
+    </fieldset>
+}
+
+    <br/>
+ <a href="/TopBanner/Index">
+        <div class="BackBtn"></div>
+    </a>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
+    </div>

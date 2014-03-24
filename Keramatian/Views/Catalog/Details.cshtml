@@ -1,0 +1,30 @@
+﻿@model Keramatian.Models.Catalog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+
+    <table class="TableDesign">
+        <tr>
+            <th>@Html.DisplayName("نام")</th>
+            <th>@Html.DisplayName("آدرس فایل")</th>
+        </tr>
+        <tr>
+            <td>@Html.DisplayFor(model => model.Name)</td>
+            <td>@Html.DisplayFor(model => model.FilePath)</td>
+        </tr>
+    </table>
+
+     <a href="/Catalog/Edit/@Model.Id">
+        <div class="EditeBTN"></div>
+    </a>
+   <br/>
+     <a href="/Catalog/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

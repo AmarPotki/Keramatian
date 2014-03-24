@@ -1,0 +1,29 @@
+﻿@model Keramatian.Models.Size
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+<h3>
+آیا از حذف مطمئن هستید؟</h3>
+
+<table class="TableDesign">
+    <tr><th>@Html.DisplayName("ابعاد")</th></tr>
+    <tr><td>@Html.DisplayFor(model => model.Name)</td></tr>
+</table>
+ 
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="" class="BtnDelet" />
+        <br/>
+      
+    </p>
+}
+     <a href="/Size/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

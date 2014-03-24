@@ -1,0 +1,51 @@
+﻿@model Keramatian.Models.Carpet
+
+@{
+    ViewBag.Title = "مشاهده جزئیات";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+    <table class="TableDesign">
+        
+        <tr>
+            <th>@Html.DisplayName("نام عکس")</th>           
+            <th>@Html.DisplayName("کد")</th>
+            <th>@Html.DisplayName("طرح")</th>
+            <th> @Html.DisplayName("بارکد")</th>
+            <th> @Html.DisplayName("درجه")</th>
+            <th>@Html.DisplayName("زمینه")</th>
+            <th>@Html.DisplayName("حاشیه")</th>
+            <th>@Html.DisplayName("ابعاد")</th>
+
+        </tr>
+        
+        <tr>
+            <td>@Html.DisplayFor(model => model.ImageName)</td>            
+            <td>@Html.DisplayFor(model => model.Code)</td>
+            <td>@Html.DisplayFor(model => model.Design)</td>
+            <td>@Html.DisplayFor(model => model.BarCode)</td>
+            <td>@Html.DisplayFor(model => model.Grade.Name)</td>
+            <td>@Html.DisplayFor(model => model.BackgroundColor.Name)</td>
+            <td>@Html.DisplayFor(model => model.Plain.Name)</td>
+            <td>
+                @foreach (var size in Model.Sizes)
+                {
+                    Html.Display(size.Name);
+                }
+
+            </td>
+
+        </tr>
+    </table>
+  
+     <a href="/Carpet/Edit/@Model.Id">
+        <div class="EditeBTN"></div>
+    </a>
+   <br/>
+     <a href="/Carpet/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

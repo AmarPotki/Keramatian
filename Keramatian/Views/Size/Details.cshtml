@@ -1,0 +1,24 @@
+﻿@model Keramatian.Models.Size
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+
+    <table class="TableDesign">
+        <tr><th>@Html.DisplayName("ابعاد")</th></tr>
+        <tr><td>@Html.DisplayFor(model => model.Name)</td></tr>
+    </table>
+ 
+         <a href="/Size/Edit/@Model.Id">
+        <div class="EditeBTN"></div>
+    </a>
+        <br/>
+ 
+     <a href="/Size/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>

@@ -1,0 +1,28 @@
+﻿@model Keramatian.Models.Plain
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="Clear"></div>
+<div class="PanelDesign">
+<h3>
+آیا از حذف مطمئن هستید؟</h3>
+
+<table class="TableDesign">
+    <tr><th>@Html.DisplayName("نام")</th></tr>
+    <tr><td>@Html.DisplayFor(model => model.Name)</td></tr>
+</table>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="" class="BtnDelet" />  
+        <br/>
+      
+    </p>
+}
+     <a href="/Plain/Index">
+        <div class="BackBtn"></div>
+    </a>
+    </div>
