@@ -24,7 +24,8 @@ namespace Keramatian.Controllers
         private readonly IPlainRepository _plainRepository;
         private readonly ISizeRepository _sizeRepository;
         private readonly ILeatherCarpetService _leatherCarpetService;
-        public LeatherCarpetController(IUnitOfWork unitOfWork, ILeatherCarpetRepository leatherCarpetRepository, IGradeRepository gradeRepository, IBackgroundColorRepository backgroundColorRepository, IPlainRepository plainRepository, ISizeRepository sizeRepository, ILeatherCarpetService leatherCarpetService)
+        private readonly IDesignRepository _designRepository;
+        public LeatherCarpetController(IUnitOfWork unitOfWork, ILeatherCarpetRepository leatherCarpetRepository, IGradeRepository gradeRepository, IBackgroundColorRepository backgroundColorRepository, IPlainRepository plainRepository, ISizeRepository sizeRepository, ILeatherCarpetService leatherCarpetService, IDesignRepository designRepository)
         {
             _unitOfWork = unitOfWork;
             _leatherCarpetRepository = leatherCarpetRepository;
@@ -33,6 +34,7 @@ namespace Keramatian.Controllers
             _plainRepository = plainRepository;
             _sizeRepository = sizeRepository;
             _leatherCarpetService = leatherCarpetService;
+            _designRepository = designRepository;
         }
 
         //
@@ -64,7 +66,7 @@ namespace Keramatian.Controllers
             ViewBag.Grade = new SelectList(_gradeRepository.All(), "Id", "Name");
             ViewBag.BackgroundColor = new SelectList(_backgroundColorRepository.All(), "Id", "Name");
             ViewBag.Plain = new SelectList(_plainRepository.All(), "Id", "Name");
-
+            ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name");
             return View(new LeatherCarpetDto { Sizes = _leatherCarpetService.PopulateSizeData() });
         }
 
@@ -77,7 +79,7 @@ namespace Keramatian.Controllers
             leatherCarpetDto.LeatherCarpet.Grade = _gradeRepository.ById(int.Parse(formCollection["Grade"]));
             leatherCarpetDto.LeatherCarpet.BackgroundColor = _backgroundColorRepository.ById(int.Parse(formCollection["BackgroundColor"]));
             leatherCarpetDto.LeatherCarpet.Plain = _plainRepository.ById(int.Parse(formCollection["Plain"]));
-
+            leatherCarpetDto.LeatherCarpet.Design = _designRepository.ById(int.Parse(formCollection["Design"]));
 
             try
             {
@@ -103,14 +105,14 @@ namespace Keramatian.Controllers
                 _unitOfWork.Commit();
                 return RedirectToAction("Index");
             }
-            catch (Exception )
+            catch (Exception)
             {
 
                 ViewBag.Grade = new SelectList(_gradeRepository.All(), "Id", "Name");
                 ViewBag.BackgroundColor = new SelectList(_backgroundColorRepository.All(), "Id", "Name");
                 ViewBag.Plain = new SelectList(_plainRepository.All(), "Id", "Name");
                 ViewBag.Size = new SelectList(_sizeRepository.All(), "Id", "Name");
-
+                ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name");
                 return View(new LeatherCarpetDto() { Sizes = _leatherCarpetService.PopulateSizeData() });
 
             }
@@ -135,7 +137,8 @@ namespace Keramatian.Controllers
             ViewBag.BackgroundColors = new SelectList(_backgroundColorRepository.All(), "Id", "Name", leatherCarpet.BackgroundColor.Id);
             ViewBag.Plains = new SelectList(_plainRepository.All(), "Id", "Name", leatherCarpet.Plain.Id);
             // ViewBag.Sizes = new SelectList(_sizeRepository.All(), "Id", "Name", leatherCarpet.Size.Id);
-
+            ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name",leatherCarpet.Design.Id);
+         
             return View(_leatherCarpetService.GenerateCarpetDtoForEditForm(id));
         }
 
@@ -160,6 +163,7 @@ namespace Keramatian.Controllers
                     ViewBag.Grades = new SelectList(_gradeRepository.All(), "Id", "Name", carpet.Grade.Id);
                     ViewBag.BackgroundColors = new SelectList(_backgroundColorRepository.All(), "Id", "Name", carpet.BackgroundColor.Id);
                     ViewBag.Plains = new SelectList(_plainRepository.All(), "Id", "Name", carpet.Plain.Id);
+                    ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name", carpet.Design.Id);
                     return View(_leatherCarpetService.GenerateCarpetDtoForEditForm(carpet.Id));
                 }
             }

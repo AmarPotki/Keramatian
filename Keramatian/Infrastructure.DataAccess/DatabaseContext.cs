@@ -26,7 +26,7 @@ namespace Keramatian.Infrastructure.DataAccess
         public DbSet<Banner> Banners { get; set; }
         public DbSet<Catalog> Catalogs { get; set; }
         public DbSet<TopBanner> TopBanners { get; set; }
-
+        public DbSet<Design> Designs { get; set; }
 
 
         public virtual void Commit()

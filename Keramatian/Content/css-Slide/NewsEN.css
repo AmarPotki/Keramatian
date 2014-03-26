@@ -16,12 +16,14 @@
 }
 	
 .slider ul {
-	height:200px;
+	height:250px;
 	width:900px; 
 }
 
 .slider ul li {
 	padding:0 20px;
+
+    height: 270px !important;
 }
 
 .slider ul li img {
@@ -29,6 +31,7 @@
 	height:211px; 
 	padding-top:3px;
 	width:300px;  
+border:0px;
 }
 
 .prev {
@@ -47,7 +50,7 @@
     float: right;
     position: relative;
     right: -52px;
-    top: -120px;
+    top: -165px;
     width: 40px !important;
     height: 40px !important;border: 0;
     background-image: url("/Images/images/diapo/next.png");
@@ -67,7 +70,7 @@
     float: right;
     position: relative;
     right: -52px;
-    top: -120px;
+    top: -165px;
     width: 40px !important;
     background-image: url("/Images/images/diapo/next-Hover.png");
     height: 40px !important;
@@ -85,6 +88,7 @@
 	padding:2px; 
 	font-size:11px;   
 	text-align:center;
+    display:none !important;
 }
 
 .caption-top {
@@ -93,6 +97,7 @@
 
 .caption-bottom {
 	border-width:0px;
+display:none !important;
 }
 
 .caption a, .caption a {
@@ -104,4 +109,10 @@
 
 .caption a:hover, .caption a:hover {
 	background:#202020;
+}
+.slider ul li .sliderTXT {
+    color: #FFFFFF;
+    margin-top: 11px;
+    text-align: left;
+    text-decoration: none !important;
 }

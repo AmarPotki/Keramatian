@@ -21,7 +21,8 @@ namespace Keramatian.Controllers
         private readonly IPlainRepository _plainRepository;
         private readonly ISizeRepository _sizeRepository;
         private readonly ICarpetService _carpetService;
-        public CarpetController(IUnitOfWork unitOfWork, ICarpetRepository carpetRepository, IGradeRepository gradeRepository, IBackgroundColorRepository backgroundColorRepository, IPlainRepository plainRepository, ISizeRepository sizeRepository, ICarpetService carpetService)
+        private readonly IDesignRepository _designRepository;
+        public CarpetController(IUnitOfWork unitOfWork, ICarpetRepository carpetRepository, IGradeRepository gradeRepository, IBackgroundColorRepository backgroundColorRepository, IPlainRepository plainRepository, ISizeRepository sizeRepository, ICarpetService carpetService, IDesignRepository designRepository)
         {
             _unitOfWork = unitOfWork;
             _carpetRepository = carpetRepository;
@@ -30,6 +31,7 @@ namespace Keramatian.Controllers
             _plainRepository = plainRepository;
             _sizeRepository = sizeRepository;
             _carpetService = carpetService;
+            _designRepository = designRepository;
         }
 
         //
@@ -62,7 +64,7 @@ namespace Keramatian.Controllers
             ViewBag.Grade = new SelectList(_gradeRepository.All(), "Id", "Name");
             ViewBag.BackgroundColor = new SelectList(_backgroundColorRepository.All(), "Id", "Name");
             ViewBag.Plain = new SelectList(_plainRepository.All(), "Id", "Name");
-
+            ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name");
             return View(new CarpetDto { Sizes = _carpetService.PopulateSizeData() });
         }
 
@@ -76,7 +78,7 @@ namespace Keramatian.Controllers
             carpetDto.Carpet.Grade = _gradeRepository.ById(int.Parse(formCollection["Grade"]));
             carpetDto.Carpet.BackgroundColor = _backgroundColorRepository.ById(int.Parse(formCollection["BackgroundColor"]));
             carpetDto.Carpet.Plain = _plainRepository.ById(int.Parse(formCollection["Plain"]));
-
+            carpetDto.Carpet.Design = _designRepository.ById(int.Parse(formCollection["Design"]));
 
             try
             {
@@ -111,7 +113,7 @@ namespace Keramatian.Controllers
                 ViewBag.BackgroundColor = new SelectList(_backgroundColorRepository.All(), "Id", "Name");
                 ViewBag.Plain = new SelectList(_plainRepository.All(), "Id", "Name");
                 ViewBag.Size = new SelectList(_sizeRepository.All(), "Id", "Name");
-
+                ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name");
                 return View(new CarpetDto { Sizes = _carpetService.PopulateSizeData() });
 
             }
@@ -135,6 +137,7 @@ namespace Keramatian.Controllers
             ViewBag.Grades = new SelectList(_gradeRepository.All(), "Id", "Name", carpet.Grade.Id);
             ViewBag.BackgroundColors = new SelectList(_backgroundColorRepository.All(), "Id", "Name", carpet.BackgroundColor.Id);
             ViewBag.Plains = new SelectList(_plainRepository.All(), "Id", "Name", carpet.Plain.Id);
+            ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name", carpet.Design.Id);
 
 
             return View(_carpetService.GenerateCarpetDtoForEditForm(id));
@@ -161,6 +164,7 @@ namespace Keramatian.Controllers
                     ViewBag.Grades = new SelectList(_gradeRepository.All(), "Id", "Name", carpet.Grade.Id);
                     ViewBag.BackgroundColors = new SelectList(_backgroundColorRepository.All(), "Id", "Name", carpet.BackgroundColor.Id);
                     ViewBag.Plains = new SelectList(_plainRepository.All(), "Id", "Name", carpet.Plain.Id);
+                       ViewBag.Design = new SelectList(_designRepository.All(), "Id", "Name", carpet.Design.Id);
                     return View(_carpetService.GenerateCarpetDtoForEditForm(carpet.Id));
                 }
             }

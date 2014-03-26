@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Linq;
 using System.Web.Mvc;
 using Keramatian.Models;
 using Keramatian.Repository;
@@ -13,21 +10,24 @@ namespace Keramatian.Areas.en.Controllers
     {
 
         private readonly ICarpetRepository _carpetRepository;
-        public CarpetController(ICarpetRepository carpetRepository)
+        private readonly IDesignRepository _designRepository;
+        public CarpetController(ICarpetRepository carpetRepository, IDesignRepository designRepository)
         {
             _carpetRepository = carpetRepository;
+            _designRepository = designRepository;
         }
 
         [HttpGet]
         [AllowAnonymousAttribute]
-        public ActionResult Gallery(int? page)
+        public ActionResult Gallery(int? page, string designName)
         {
-            var totalCarpetCount = _carpetRepository.GetCount();
+            var totalCarpetCount = _carpetRepository.GetDesignCount();
             var pageIndex = (page ?? 1) - 1;
-            var pageSize = 6;
-            var carpets = _carpetRepository.GetCarpets(page, pageSize);
+            var pageSize = 1;
+            var carpets = _carpetRepository.GetCarpets(pageIndex);
             var carpetsAsIPagedList = new StaticPagedList<Carpet>(carpets, pageIndex + 1, pageSize, totalCarpetCount);
             ViewBag.OnePageOfcarpets = carpetsAsIPagedList;
+            ViewBag.Design = (_designRepository.GetDesignWithPriority(pageIndex));
             if (carpetsAsIPagedList.Count > 3)
             {
                 ViewBag.OnePageOfcarpets1 = carpetsAsIPagedList.Take(3);
@@ -40,6 +40,13 @@ namespace Keramatian.Areas.en.Controllers
 
 
             return View();
+        }
+        // for SEO
+        [AllowAnonymousAttribute]
+        public string GetDesignName(int? page)
+        {
+            var pageIndex = (page ?? 1) - 1;
+            return (_designRepository.GetDesignWithPriority(pageIndex)).Name;
         }
 
     }

@@ -27,7 +27,7 @@
         <div class="pix_diapo">
 
             @foreach (var item in Model)
-            {
+           {
                 <div>
                     <img src="@item.EnImagePath" alt="@item.ImageName"/>
                 </div>
@@ -49,7 +49,7 @@
                         @foreach (var item in (IEnumerable<Announcement>)ViewBag.Announcements)
                         {
                             <li>
-                                           <a href="/en/Announcement/Details/@item.Id" title="@item.Title"><img src="@item.ImagePath" alt="@item.Title" class="captify" /></a>
+                                           <a href="/en/Announcement/Details/@item.Id" title="@item.Title"><img src="@item.ImagePath" alt="@item.Title" class="captify" /><div class="sliderTXT">@item.EnTitle</div> </a>
                             </li> 
                         }
          

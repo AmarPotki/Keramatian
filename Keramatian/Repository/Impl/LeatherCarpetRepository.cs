@@ -26,5 +26,9 @@ namespace Keramatian.Repository.Impl
         {
             return Database.LeatherCarpets.Include("Sizes").First(x => x.Id == leatherCarpetId);
         }
+        public override IEnumerable<LeatherCarpet> All()
+        {
+            return Database.LeatherCarpets.Include("Design");
+        }
     }
 }

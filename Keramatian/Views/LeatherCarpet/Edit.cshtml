@@ -29,8 +29,7 @@
                 @Html.DisplayName("طرح")
             </div>
             <div class="editor-field">
-                @Html.EditorFor(model => model.LeatherCarpet.Design)
-                @Html.ValidationMessageFor(model => model.LeatherCarpet.Design)
+               @Html.DropDownList("Design")
             </div>
 
             <div class="editor-label">

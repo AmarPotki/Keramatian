@@ -8,7 +8,7 @@
 }
    <style type="text/css">
 
-        .current_page_item a{
+        .current_page_item{
             color: #00ADEF !important;
         }
     </style>
@@ -50,7 +50,7 @@
                         @foreach (var item in (IEnumerable<Announcement>)ViewBag.Announcements)
                         {
                             <li>
-                                           <a href="/Announcement/Details/@item.Id" title="@item.Title"><img src="@item.ImagePath" alt="@item.Title" class="captify" /></a>
+                                           <a href="/Announcement/Details/@item.Id" title="@item.Title"><img src="@item.ImagePath" alt="@item.Title" class="captify" /><div class="sliderTXT">@item.Title</div> </a>
                             </li> 
                         }
          

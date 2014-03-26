@@ -13,7 +13,7 @@ namespace Keramatian.Models
         public string Code { get; set; }
         public virtual BackgroundColor BackgroundColor { get; set; }
 
-        public string Design { get; set; }
+        public string OldDesign { get; set; }
         public virtual Grade Grade { get; set; }
 
         public virtual Plain Plain { get; set; }
@@ -23,6 +23,7 @@ namespace Keramatian.Models
         public string HighQualityImagePath { get; set; }
         public int? Priority { get; set; }
         public  List<Size> Sizes { get; set; }
+        public Design Design { get; set; }
 
 
 

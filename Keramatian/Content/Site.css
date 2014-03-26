@@ -21,7 +21,7 @@ a {
     outline: medium none;
     padding-left: 3px;
     padding-right: 3px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 a:link, a:visited, a:active, a:hover {
     color: #333333;
@@ -106,18 +106,35 @@ textarea {
     width: 134px;
     margin-top: 10px;
 }
+
+
+
+
+
+
 .MenuBar {
-    direction: rtl;
+    direction: ltr;
     float: right;
     font-family: tahoma;
     margin-top: 56px;
-    text-align: right;
+    text-align: left;
     width: 616px;
+}
+.MenuBar a {
+    color: #BBBBBB;
+    float: right;
+    font-size: 14px;
+    padding: 6px 10px 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.MenuBar a:hover {
+    color: #00ADEF;
 }
 .TopPage {
     background-image: url("../Images/TopBG.jpg");
     background-repeat: repeat-x;
-    height: 10px !important;
+    height: 80px !important;
     margin: 0 auto;
     width: 990px;
 }
@@ -185,7 +202,7 @@ a .CatalogeDL {
     clear: both;
     margin: 0 auto;
  /*   padding-bottom: 35px;*/
-    width: 990px;
+    /*  width: 990px;*/
     z-index: 0;
 }
 .TopSlider {
@@ -199,7 +216,7 @@ a .CatalogeDL {
     float: right;
 }
 .nav-wrap {
-    width: 543px;
+    width: 616px;
 }
 #example-one {
     list-style: none outside none;

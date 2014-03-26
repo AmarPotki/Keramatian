@@ -22,7 +22,7 @@ a {
     outline: medium none;
     padding-left: 3px;
     padding-right: 3px;
-    text-decoration: underline;
+    text-decoration: none;
 }
 a:link, a:visited, a:active, a:hover {
     color: #333333;
@@ -115,10 +115,21 @@ textarea {
     text-align: left;
     width: 579px;
 }
+.MenuBar a {
+    color: #BBBBBB;
+    float: left;
+    font-size: 14px;
+    padding: 6px 10px 4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.MenuBar a:hover {
+    color: #00ADEF;
+}
 .TopPage {
     background-image: url("../../Images/TopBG.jpg");
     background-repeat: repeat-x;
-    height: 10px !important;
+    height: 80px !important;
     margin: 0 auto;
     width: 990px;
 }
@@ -192,7 +203,7 @@ a .CatalogeDL {
     clear: both;
     margin: 0 auto;
  /*   padding-bottom: 35px;*/
-    width: 990px;
+  /*   width: 990px;*/
     z-index: 0;
 }
 .TopSlider {
@@ -206,7 +217,7 @@ a .CatalogeDL {
     float: right;
 }
 .nav-wrap {
-    width: 543px;
+    width: 580px;
 }
 #example-one {
     list-style: none outside none;
@@ -227,8 +238,8 @@ a .CatalogeDL {
 #example-one a:hover {
     color: #00ADEF;
 }
-.current_page_item a {
-    color: #00ADEF;
+.current_page_item{
+    color: #00ADEF !important;
 }
 .current_page_item a:hover {
     color: #00ADEF !important;
@@ -385,21 +396,19 @@ table.TableDesign td {
     padding-top: 6px;
 }
 .NewsPage {
-    direction: rtl;
+    direction: ltr;
     margin: 0 auto;
-    text-align: right !important;
+    text-align: left !important;
     width: 990px;
 }
+
 .NewsIMG {
-    background-image: url("../../Images/NewsBG.png");
     background-repeat: no-repeat;
-    float: left !important;
+    float: right!important;
     height: 209px;
     margin-bottom: 15px;
-    margin-right: 25px;
-    padding-right: 36px;
-    padding-top: 38px;
-    width: 288px;
+    padding-left: 36px;
+    width: 265px;
 }
 .NewsPage b {
     color: #00ADEF;
@@ -421,6 +430,7 @@ table.TableDesign td {
     margin-right: 15px;
     margin-top: 45px;
     width: 990px;
+
 }
 .RowGallery img {
     margin-left: 6px;
@@ -429,18 +439,18 @@ table.TableDesign td {
     color: #FFFFFF;
     width: 320px;
 }
-.GalleryTitle {
+.GalleryCode {
     background-image: url("../../Images/IMG-Gallery/Arrow.png");
     background-position: center bottom;
     background-repeat: no-repeat;
-    float: left;
+    float: right;
     padding-bottom: 10px;
     padding-left: 15px;
-}
-.GalleryCode {
-    float: right;
     padding-right: 15px;
-    font-weight: bold;
+}
+.GalleryTitle {
+    display: none;
+    padding-right: 15px;
 }
 .GalleryInfo {
     height: 38px;
@@ -604,17 +614,38 @@ table.TableDesign td {
 }
 
 .AboutUS {
-    color: #FFFFFF;
+    width: 990px;
+    color: #fff;
+    text-align: justify;
     direction: ltr;
     line-height: 22px;
     padding-bottom: 30px;
-    text-align: justify;
-    width: 990px;
 }
 .AboutUSPIC {
-    margin-left: 387px;
+   text-align:center;
 }
 .AboutUS p {
-    text-align: left;
+    text-align: justify
     direction: ltr;
+}
+.Resellerimg {
+    border: 2px solid #808080;
+    float: right;
+    height: 190px;
+    width: 535px;
+}
+.Resellertxt {
+    direction: ltr;
+    float: left;
+    padding-top: 35px;
+    text-align: left;
+    width: 445px;
+}
+.GoogleMap {
+    background-image: url("/images/Reseller/GoogleMap.png");
+    background-position: right center !important;
+    background-repeat: no-repeat;
+    float: left !important;
+    height: 35px;
+    width: 120px !important;
 }

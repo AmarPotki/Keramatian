@@ -1,15 +1,15 @@
 ﻿@using PagedList
 @using PagedList.Mvc
 @{
-    ViewBag.Title = "گالری فرش";
+    ViewBag.Title = "Gallery";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@section Scripts {
 
-    <link href="~/Content/PagedList.css" rel="stylesheet" />
+
+  
     <script src="/Scripts/js-Gallery/jquery-1.10.1.min.js"></script>
     <script src="/Scripts/js-Gallery/jquery.fancybox.js"></script>
-    <link href="/Content/css-Slide/Gallery.css" rel="stylesheet" />
+
     <script type="text/javascript">
         $(document).ready(function () {
 
@@ -19,14 +19,12 @@
 
         });
     </script>
-        <style type="text/css">
-  
-        .current_page_Gallery a {
-    color: #00ADEF !important;
-}
-    </style>
 
-}
+
+
+    <link href="/Content/css-Slide/Gallery.css" rel="stylesheet" />
+<link href="~/Content/PagedList.css" rel="stylesheet" />
+
 
 @{double count = 0;}
 <div class="GalleryPage">
@@ -37,7 +35,7 @@
             <div class="GalleryIMG">
                 <span class="GalleryInfo">
                     <p class="GalleryTitle">@item.Design</p>
-
+<p class="GalleryCode">@item.Code</p>
                 </span>
 
                 <div class="Clear"></div>
@@ -60,7 +58,7 @@
                 <div class="GalleryIMG">
                     <span class="GalleryInfo">
                         <p class="GalleryTitle">@item.Design</p>
-
+<p class="GalleryCode">@item.Code</p>
                     </span>
                     <div class="Clear"></div>
                     <a class="fancybox" href="@item.HighQualityImagePath" data-fancybox-group="gallery">

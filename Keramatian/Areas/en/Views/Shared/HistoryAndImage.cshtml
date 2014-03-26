@@ -1,0 +1,12 @@
+﻿@{var design = (Keramatian.Models.Design)ViewBag.Design;}
+ <div class="HistorySection">
+            <div class="HistoryPic">
+                <img src="@design.ImagePath" width="385" height="300" alt="@design.ImageName" />
+            </div>
+            <div class="HistoryTXT">
+
+                <div class="HistoryTitle">@design.Name</div>
+                <div class="HistoryDescription"> @Html.Raw(HttpUtility.HtmlDecode(@design.History))</div>
+
+            </div>
+        </div>

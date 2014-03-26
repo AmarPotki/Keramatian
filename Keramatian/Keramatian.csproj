@@ -212,6 +212,7 @@
     <Compile Include="Controllers\BannerController.cs" />
     <Compile Include="Controllers\CarpetController.cs" />
     <Compile Include="Controllers\CatalogController.cs" />
+    <Compile Include="Controllers\DesignController.cs" />
     <Compile Include="Controllers\GradeController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LeatherCarpetController.cs" />
@@ -247,6 +248,7 @@
     <Compile Include="Models\Banner.cs" />
     <Compile Include="Models\Carpet.cs" />
     <Compile Include="Models\Catalog.cs" />
+    <Compile Include="Models\Design.cs" />
     <Compile Include="Models\Grade.cs" />
     <Compile Include="Models\IEntity.cs" />
     <Compile Include="Models\LeatherCarpet.cs" />
@@ -262,6 +264,7 @@
     <Compile Include="Repository\ICarpetRepository.cs" />
     <Compile Include="Repository\ICatalogRepository.cs" />
     <Compile Include="Repository\IDatabaseFactory.cs" />
+    <Compile Include="Repository\IDesignRepository.cs" />
     <Compile Include="Repository\IGradeRepository.cs" />
     <Compile Include="Repository\ILeatherCarpetRepository.cs" />
     <Compile Include="Repository\Impl\AnnouncementRepository.cs" />
@@ -270,6 +273,7 @@
     <Compile Include="Repository\Impl\CarpetRepository.cs" />
     <Compile Include="Repository\Impl\CatalogRepository.cs" />
     <Compile Include="Repository\Impl\DatabaseFactory.cs" />
+    <Compile Include="Repository\Impl\DesignRepository.cs" />
     <Compile Include="Repository\Impl\GradeRepository.cs" />
     <Compile Include="Repository\Impl\LeatherCarpetRepository.cs" />
     <Compile Include="Repository\Impl\PlainRepository.cs" />
@@ -404,6 +408,9 @@
     <Content Include="Areas\en\Views\LeatherCarpet\Gallery.cshtml" />
     <Content Include="Areas\en\Views\Carpet\Gallery.cshtml" />
     <Content Include="Areas\en\Views\Announcement\Details.cshtml" />
+    <Content Include="Areas\en\Views\Shared\HistoryAndImage.cshtml" />
+    <Content Include="Areas\en\Views\Shared\OnlyHistory.cshtml" />
+    <Content Include="Areas\en\Views\Shared\OnlyDesingTitle.cshtml" />
     <None Include="Properties\PublishProfiles\Amar.pubxml" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Images\bg.jpg" />
@@ -768,6 +775,11 @@
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Scripts\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Views\Home\LanguageSelect.cshtml" />
+    <Content Include="Views\Design\Index.cshtml" />
+    <Content Include="Views\Design\Details.cshtml" />
+    <Content Include="Views\Design\Create.cshtml" />
+    <Content Include="Views\Design\Edit.cshtml" />
+    <Content Include="Views\Design\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -777,6 +789,7 @@
     <Folder Include="Images\Announcement\" />
     <Folder Include="Images\Banners\" />
     <Folder Include="Images\Carpet\" />
+    <Folder Include="Images\Design\" />
     <Folder Include="Images\leatherCarpet\" />
   </ItemGroup>
   <ItemGroup>

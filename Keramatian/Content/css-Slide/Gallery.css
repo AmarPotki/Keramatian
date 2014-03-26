@@ -275,8 +275,10 @@
        .fancybox-custom .fancybox-skin {
             box-shadow: 0 0 50px #222;
         }
-   
-        .current_page_item a{
+        .current_page_Gallery{
+            color: #00ADEF !important;
+        }
+        .current_page_item{
             color: #ffffff !important;
         }
         
@@ -317,4 +319,58 @@ table.TGalleryDesign td {
 }
 .TblMargin {
     margin-top: 10px;   
+}
+
+/*Gallery Options*/
+.HistorySection {
+    margin-top: 10px;
+}
+.HistoryPic {
+    float: left;
+    padding-right: 50px;
+    width: 385px;
+}
+.HistoryTitle {
+    text-align: left;
+    color: #878787;
+    font-weight: bold;
+    font-size: 13pt;
+    font-variant: small-caps;
+}
+.HistoryDescription {
+    color: #878787;
+    margin-top: 15px;
+}
+.HistoryTXT {
+    padding-top: 60px;
+}
+
+
+.HistoryTitle2 {
+    color: #878787;
+    font-size: 13pt;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: center;
+}
+.HistoryDescription2 {
+    color: #878787;
+    margin-top: 15px;
+}
+.HistoryTXT2 {
+    padding-top: 30px;
+    width: 650px;
+    text-align: center;
+    margin: 0px auto;
+}
+
+.HistoryTXT3 {
+    padding-top: 30px;
+}
+.HistoryTitle3 {
+    color: #878787;
+    font-size: 13pt;
+    font-variant: small-caps;
+    font-weight: bold;
+    text-align: left;
 }
